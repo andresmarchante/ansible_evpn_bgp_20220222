@@ -158,7 +158,7 @@ os10_vxlan:
               state: "present"
           state: "present"
       vrf:
-        - name: "test"
+        - name: "tenant1"
           vni: 1000
           adv_ipv4: 
             - type: "connected"
