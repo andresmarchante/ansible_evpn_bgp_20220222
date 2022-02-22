@@ -83,7 +83,7 @@ os10_interface:
     switchport: False
   ethernet 1/1/5:
     switchport: False
-    vrf: "test"
+    vrf: "tenant1"
     ip_and_mask: "20.20.20.20/24"
     admin: up
   ethernet 1/1/53:
