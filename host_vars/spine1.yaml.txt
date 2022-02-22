@@ -6,8 +6,8 @@ os10_system:
   hostname: "spine1"
 
 os10_bgp:
-  asn: 200
-  router_id: 9.9.9.10
+  asn: 65001
+  router_id: 192.168.1.101
   neighbor: 
     - type: "peergroup" 
       name: "ebgp_session"
