@@ -71,10 +71,16 @@ os10_interface:
     admin: up
     switchport: False
     portmode: "trunk"
+  ethernet 1/1/53:
+    admin: up
+    switchport: False
+  ethernet 1/1/54:
+    admin: up
+    switchport: False
   port-channel 10:
     portmode: "trunk"
     admin: up
-  vlan 30:
+  vlan 60:
     suppress_ra: absent
     min_ra: 3
     max_ra: 4
@@ -84,7 +90,7 @@ os10_interface:
     min_ra: 3
     max_ra: 4
     admin: up
-  vlan 40:
+  vlan 50:
     suppress_ra: absent
     min_ra: 3
     max_ra: 4

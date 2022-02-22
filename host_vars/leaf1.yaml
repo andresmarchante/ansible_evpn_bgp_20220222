@@ -72,6 +72,12 @@ os10_interface:
     admin: up
     switchport: False
     portmode: "trunk"
+  ethernet 1/1/53:
+    admin: up
+    switchport: False
+  ethernet 1/1/54:
+    admin: up
+    switchport: False
   port-channel 10:
     portmode: "trunk"
     admin: up

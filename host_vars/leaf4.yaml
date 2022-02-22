@@ -86,6 +86,12 @@ os10_interface:
     vrf: "test"
     ip_and_mask: "20.20.20.20/24"
     admin: up
+  ethernet 1/1/53:
+    admin: up
+    switchport: False
+  ethernet 1/1/54:
+    admin: up
+    switchport: False
   port-channel 10:
     portmode: "trunk"
     admin: up
@@ -105,12 +111,12 @@ os10_interface:
     max_ra: 4
     admin: up
   virtual-network 200:
-    vrf: "test"
+    vrf: "tenant1"
     ip_and_mask: "172.16.1.4/24"
     ip_virtual_gateway_ip: "172.16.1.254"
     admin: up
   virtual-network 300:
-    vrf: "test"
+    vrf: "tenant1"
     ip_and_mask: "172.17.1.4/24"
     ip_virtual_gateway_ip: "172.17.1.254"
     admin: up
