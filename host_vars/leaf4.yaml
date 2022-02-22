@@ -43,7 +43,7 @@ os10_bgp:
       admin: up
       state: present
   vrf:
-    name: "test"
+    name: "tenant1"
     address_type: ipv4 
     redistribute:
       - route_type: l2vpn 
@@ -61,11 +61,11 @@ os10_interface:
     ip_and_mask: 10.1.1.2/32
   loopback 10:
     admin: up
-    vrf: "test"
+    vrf: "tenant1"
     ip_and_mask: 80.1.1.10/32
   loopback 20:
     admin: up
-    vrf: "test"
+    vrf: "tenant1"
     ip_and_mask: 90.1.1.10/32
   ethernet 1/1/1:
     admin: up
