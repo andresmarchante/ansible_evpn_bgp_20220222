@@ -3,11 +3,11 @@ ansible_ssh_pass: admin
 ansible_network_os: dellemc.os10.os10
 
 os10_system:
-  hostname: "VLT1-SEC"
+  hostname: "leaf2"
 
 os10_bgp:
-  asn: 100
-  router_id: 1.1.1.20
+  asn: 65101
+  router_id: 192.168.1.104
   neighbor: 
     - type: ipv4 
       interface: vlan40
@@ -42,7 +42,7 @@ os10_bgp:
           state: present
       admin: up
       state: present
-  ipv4_network: 1.1.1.1/32
+  ipv4_network: 10.1.1.1/32
   redistribute:
     - route_type: connected
       address_type: ipv4   
@@ -53,7 +53,7 @@ os10_bgp:
 os10_interface:
   loopback 0:
     admin: up
-    ip_and_mask: 1.1.1.1/32
+    ip_and_mask: 10.1.1.1/32
   ethernet 1/1/3:
     switchport: False
     admin: up
@@ -91,40 +91,40 @@ os10_interface:
     admin: up
   virtual-network 100:
     vrf: "test"
-    ip_and_mask: "15.1.1.2/24"
-    ip_virtual_gateway_ip: "15.1.1.254"
+    ip_and_mask: "172.16.1.2/24"
+    ip_virtual_gateway_ip: "172.16.1.254"
     admin: up
   virtual-network 300:
     vrf: "test"
-    ip_and_mask: "25.1.1.2/24"
-    ip_virtual_gateway_ip: "25.1.1.254"
+    ip_and_mask: "172.17.1.2/24"
+    ip_virtual_gateway_ip: "172.17.1.254"
     admin: up
 
 os10_lag:
   port-channel 10:
     type: dynamic
     channel_members:
-      - port: ethernet1/1/5
+      - port: ethernet1/1/4
         mode: active
     state: present
 
 os10_vlan:
   vlan 30:
     tagged_members:
-      - port: ethernet 1/1/1
+      - port: ethernet 1/1/52
         state: "present"
         access_vlan: "false"
     state: "present"
   vlan 40:
     tagged_members:
-      - port: ethernet 1/1/2
+      - port: ethernet 1/1/51
         state: "present"
         access_vlan: "false"
     state: "present"
 
 os10_vrf:
   vrfdetails:
-    - vrf_name: "test"
+    - vrf_name: "tenant1"
       state: "present"
 
 os10_vxlan:
@@ -198,7 +198,7 @@ os10_vlt:
    domain: 1
    destination_type: "ipv4"
    peer_routing: True
-   discovery_intf: "1/1/3-1/1/4"
+   discovery_intf: "1/1/53-1/1/54"
    vlt_mac: 00:00:00:11:22:33
    vlt_peers:
      Po 10:
