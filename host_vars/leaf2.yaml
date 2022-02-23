@@ -132,6 +132,18 @@ os10_vlan:
     untagged_members:
       - port: ethernet 1/1/3
         state: "present"
+  vlan 689:
+    tagged_members:
+      - port: port-channel 10
+        state: "present"
+  vlan 690:
+    tagged_members:
+      - port: port-channel 10
+        state: "present"
+  vlan 699:
+    tagged_members:
+      - port: port-channel 10
+        state: "present"
         
 
 os10_vrf:
@@ -169,6 +181,33 @@ os10_vxlan:
         - id: 1200
           vni:
             id: 1200
+            state: "present"
+          rd: "auto"
+          route_target:
+            - type: "auto"
+              state: "present"
+          state: "present"
+        - id: 689
+          vni:
+            id: 689
+            state: "present"
+          rd: "auto"
+          route_target:
+            - type: "auto"
+              state: "present"
+          state: "present"
+        - id: 690
+          vni:
+            id: 690
+            state: "present"
+          rd: "auto"
+          route_target:
+            - type: "auto"
+              state: "present"
+          state: "present"
+        - id: 699
+          vni:
+            id: 699
             state: "present"
           rd: "auto"
           route_target:
@@ -225,9 +264,30 @@ os10_vxlan:
             id: 1200
             state: "present"
           state: "present"
+        - id: 689
+          vxlan_vni:
+            id: 689
+            state: "present"
+          state: "present"
+        - id: 690
+          vxlan_vni:
+            id: 690
+            state: "present"
+          state: "present"
+        - id: 699
+          vxlan_vni:
+            id: 699
+            state: "present"
+          state: "present"
     vlan_association:
       - vlan_id: 1200
         virtual_net: 1200
+      - vlan_id: 689
+        virtual_net: 689
+      - vlan_id: 690
+        virtual_net: 690
+      - vlan_id: 699
+        virtual_net: 699
         
 os10_vlt:
    domain: 1
