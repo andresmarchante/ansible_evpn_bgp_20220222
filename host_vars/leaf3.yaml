@@ -71,6 +71,10 @@ os10_interface:
     admin: up
     switchport: False
     portmode: "trunk"
+  ethernet 1/1/2:
+    admin: up
+    switchport: True
+    portmode: "access"    
   ethernet 1/1/53:
     admin: up
     switchport: False
@@ -182,6 +186,10 @@ os10_vxlan:
           member_interface:
             - ifname: "port-channel10"
               type: "tagged"
+              vlanid: 100
+              state: "present"
+            - ifname: "ethernet 1/1/3"
+              type: "untagged"
               vlanid: 100
               state: "present"
           vxlan_vni:
