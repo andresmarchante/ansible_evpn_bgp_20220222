@@ -134,6 +134,10 @@ os10_vlan:
         state: "present"
         access_vlan: "false"
     state: "present"
+  vlan 1200:
+    untagged_members:
+      - port: ethernet 1/1/5
+        state: "present"
 
 os10_vrf:
   vrfdetails:
@@ -196,7 +200,21 @@ os10_vxlan:
             id: 300
             state: "present"
           state: "present"
-
+        - id: 1200
+          vlt_vlan_id: 1200
+          member_interface:
+            - ifname: "port-channel10"
+              type: "tagged"
+              vlanid: 1200
+              state: "present"
+          vxlan_vni:
+            id: 1200
+            state: "present"
+          state: "present"
+    vlan_association:
+      - vlan_id: 1200
+        virtual_net: 1200
+ 
 os10_vlt:
    domain: 1
    destination_type: "ipv4"
