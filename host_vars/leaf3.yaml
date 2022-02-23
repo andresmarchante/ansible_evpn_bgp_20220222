@@ -62,7 +62,8 @@ os10_interface:
     switchport: False
   ethernet 1/1/5:
     admin: up
-    switchport: False
+    switchport: True
+    portmode: "access"    
   ethernet 1/1/1:
     admin: up
     switchport: False
@@ -70,11 +71,7 @@ os10_interface:
   ethernet 1/1/2:
     admin: up
     switchport: False
-    portmode: "trunk"
-  ethernet 1/1/2:
-    admin: up
-    switchport: True
-    portmode: "access"    
+    portmode: "trunk"  
   ethernet 1/1/53:
     admin: up
     switchport: False
