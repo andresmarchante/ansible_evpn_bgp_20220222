@@ -191,10 +191,6 @@ os10_vxlan:
               type: "tagged"
               vlanid: 100
               state: "present"
-            - ifname: "ethernet 1/1/3"
-              type: "untagged"
-              vlanid: 100
-              state: "present"
           vxlan_vni:
             id: 100
             state: "present"
