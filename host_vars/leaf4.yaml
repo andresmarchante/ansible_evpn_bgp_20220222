@@ -172,6 +172,15 @@ os10_vxlan:
             - type: "auto"
               state: "present"
           state: "present"
+        - id: 1200
+          vni:
+            id: 1200
+            state: "present"
+          rd: "auto"
+          route_target:
+            - type: "auto"
+              state: "present"
+          state: "present"
       vrf:
         - name: "tenant1"
           vni: 1000
