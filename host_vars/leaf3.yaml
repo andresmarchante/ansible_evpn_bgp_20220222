@@ -112,7 +112,7 @@ os10_lag:
   port-channel 10:
     type: dynamic
     channel_members:
-      - port: ethernet1/1/5
+      - port: ethernet1/1/4
         mode: active
     state: present
 
