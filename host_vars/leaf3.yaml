@@ -111,7 +111,7 @@ os10_lag:
   port-channel 10:
     type: dynamic
     channel_members:
-      - port: ethernet1/1/5
+      - port: ethernet1/1/4
         mode: active
     state: present
 
@@ -210,7 +210,7 @@ os10_vxlan:
             state: "present"
           state: "present"
         - id: 1200
-          vlt_vlan_id: 1200
+#          vlt_vlan_id: 1200
           member_interface:
             - ifname: "port-channel10"
               type: "tagged"

@@ -216,7 +216,7 @@ os10_vxlan:
             state: "present"
           state: "present"
         - id: 1200
-          vlt_vlan_id: 1200
+#          vlt_vlan_id: 1200
           member_interface:
             - ifname: "port-channel10"
               type: "tagged"

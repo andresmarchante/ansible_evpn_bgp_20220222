@@ -76,7 +76,8 @@ os10_interface:
     switchport: False
     portmode: "trunk"
   ethernet 1/1/3:
-    switchport: False
+    switchport: True
+    portmode: "access"
     admin: up
   ethernet 1/1/4:
     admin: up
@@ -136,7 +137,7 @@ os10_vlan:
     state: "present"
   vlan 1200:
     untagged_members:
-      - port: ethernet 1/1/5
+      - port: ethernet 1/1/3
         state: "present"
 
 os10_vrf:
@@ -201,7 +202,7 @@ os10_vxlan:
             state: "present"
           state: "present"
         - id: 1200
-          vlt_vlan_id: 1200
+#          vlt_vlan_id: 1200
           member_interface:
             - ifname: "port-channel10"
               type: "tagged"
